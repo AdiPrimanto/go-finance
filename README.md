@@ -34,6 +34,6 @@ Register dengan akun:
 
 Untuk logout masuk ke menu profile dengan klik nama user di Navbar
 
-## Regisgter
+## Register
 
 Untuk melakukan register klik tulisan "Sign Up" di bawah button Login pada halaman Login
