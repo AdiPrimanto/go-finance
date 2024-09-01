@@ -11,8 +11,8 @@ import { toast } from "@/hooks/use-toast";
 import { LineMdLoadingTwotoneLoop } from "@/components/icons/loading";
 
 const Edit = ({ isOpen, onClose, initialData }: any) => {
-  const [name, setName] = useState(initialData.name || "");
-  const [job, setJob] = useState(initialData.job || "");
+  const [name, setName] = useState(initialData?.name || "");
+  const [job, setJob] = useState(initialData?.job || "");
   const [loading, setLoading] = useState(false);
 
   const saveData = async () => {
