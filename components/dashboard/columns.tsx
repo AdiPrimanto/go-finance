@@ -1,7 +1,7 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-import ActionButtons from "./ActionButtons";
+import ActionButtons from "../../pages/dashboard/ActionButtons";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.

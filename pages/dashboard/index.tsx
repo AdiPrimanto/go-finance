@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import useAuthStore from "../../store/useAuthStore";
 import Navbar from "@/components/Navbar";
-import { Payment, columns } from "./columns";
-import { DataTable } from "./data-table";
-import Add from "./add";
+import { Payment, columns } from "@/components/dashboard/columns";
+import { DataTable } from "@/components/dashboard/data-table";
+import Add from "@/components/dashboard/add";
 
 const Dashboard = () => {
   const [data, setData] = useState<Payment[]>([]); // State untuk menyimpan data pembayaran
