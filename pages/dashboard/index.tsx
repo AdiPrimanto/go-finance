@@ -4,10 +4,11 @@ import useAuthStore from "../../store/useAuthStore";
 import Navbar from "@/components/Navbar";
 import { Payment, columns } from "@/components/dashboard/columns";
 import { DataTable } from "@/components/dashboard/data-table";
-import Add from "@/components/dashboard/add";
+import dynamic from "next/dynamic";
+const Add = dynamic(() => import("@/components/dashboard/add"), { ssr: false });
 
 const Dashboard = () => {
-  const [data, setData] = useState<Payment[]>([]); // State untuk menyimpan data pembayaran
+  const [data, setData] = useState<Payment[]>([]);
   const user = useAuthStore((state: any) => state.user);
   const router = useRouter();
   const isClient = typeof window !== "undefined";
@@ -33,23 +34,21 @@ const Dashboard = () => {
     if (isClient && !user) {
       router.push("/login");
     } else {
-      getData(); // Panggil fungsi getData untuk mengambil data
+      getData();
     }
   }, [isClient, user, router]);
 
   return (
-    <>
-      <div className="bg-[#f2f2f2] min-h-screen">
-        <Navbar />
-        <div className="px-20 py-10">
-          <Add />
+    <div className="bg-[#f2f2f2] min-h-screen">
+      <Navbar />
+      <div className="px-20 py-10">
+        <Add />
 
-          <div className="container mx-auto py-10">
-            <DataTable columns={columns} data={data} />
-          </div>
+        <div className="container mx-auto py-10">
+          <DataTable columns={columns} data={data} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

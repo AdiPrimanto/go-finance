@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
-import EditDialog from "./edit";
+import dynamic from "next/dynamic";
 import { toast } from "@/hooks/use-toast";
 import { Payment } from "./columns";
 import { MaterialSymbolsLightEditOutlineRounded } from "@/components/icons/pencil";
 import { MaterialSymbolsDeleteOutlineRounded } from "@/components/icons/trash";
+
+// Menggunakan dynamic import dengan ssr: false
+const EditDialog = dynamic(() => import("./edit"), { ssr: false });
 
 interface ActionButtonsProps {
   payment: Payment;
@@ -12,10 +14,9 @@ interface ActionButtonsProps {
 
 const ActionButtons: React.FC<ActionButtonsProps> = ({ payment }) => {
   const [isEditing, setIsEditing] = useState(false);
-  const router = useRouter();
 
   const handleEdit = () => {
-    setIsEditing(true); // Membuka dialog edit
+    setIsEditing(true);
   };
 
   const handleDelete = async () => {
@@ -31,7 +32,6 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ payment }) => {
           title: "Success",
           description: "Payment has been deleted successfully",
         });
-        // Lakukan logika tambahan di sini, seperti refresh data
       } else {
         throw new Error("Failed to delete");
       }
@@ -58,7 +58,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ payment }) => {
       <EditDialog
         isOpen={isEditing}
         onClose={() => setIsEditing(false)}
-        initialData={payment} // Kirim data awal untuk diedit
+        initialData={payment}
       />
     </div>
   );
