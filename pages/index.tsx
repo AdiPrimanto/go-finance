@@ -14,7 +14,11 @@ const Home = () => {
     }
   }, [user, router]);
 
-  return null; // Render nothing, since we're redirecting
+  return (
+    <div className="min-h-screen flex justify-center items-center">
+      <p>Loading...</p>
+    </div>
+  );
 };
 
 export default Home;

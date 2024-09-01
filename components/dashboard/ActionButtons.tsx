@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import EditDialog from "./edit";
 import { toast } from "@/hooks/use-toast";
-import { Payment } from "../../components/dashboard/columns";
+import { Payment } from "./columns";
 import { MaterialSymbolsLightEditOutlineRounded } from "@/components/icons/pencil";
 import { MaterialSymbolsDeleteOutlineRounded } from "@/components/icons/trash";
 

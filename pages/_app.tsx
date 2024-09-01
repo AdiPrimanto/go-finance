@@ -6,10 +6,10 @@ function MyApp(
   { pageProps }: { pageProps: any }
 ) {
   return (
-    <>
+    <div>
       <Component {...pageProps} />
       <Toaster />
-    </>
+    </div>
   );
 }
 

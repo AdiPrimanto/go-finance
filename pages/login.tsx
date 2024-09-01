@@ -64,51 +64,50 @@ const Login = () => {
       </div>
 
       <div className="col-span-12 md:col-span-4 bg-white flex justify-center items-center">
-        <form
-          onSubmit={handleLogin}
-          className="flex gap-4 flex-col w-full p-10 md:p-20"
-        >
-          <div className="mb-8">
-            <h1 className="text-black text-4xl font-bold">Hello Again!</h1>
-            <h3 className="text-black text-2xl">Welcome Back</h3>
-          </div>
-          <div className="relative">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
-            />
-            <PhEnvelopeSimple className="absolute top-3.5 left-4 text-gray-400" />
-          </div>
-          <div className="relative">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
-            />
-            <GameIconsPlainPadlock className="absolute top-3.5 left-4 text-gray-400" />
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-500 rounded-full p-3 text-white text-base w-full flex items-center justify-center"
-          >
-            {loading && (
-              <LineMdLoadingTwotoneLoop className="animate-spin mr-2" />
-            )}
-            Login
-          </button>
+        <form onSubmit={handleLogin}>
+          <div className="flex gap-4 flex-col w-full p-10 md:p-20">
+            <div className="mb-8">
+              <h1 className="text-black text-4xl font-bold">Hello Again!</h1>
+              <h3 className="text-black text-2xl">Welcome Back</h3>
+            </div>
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
+              />
+              <PhEnvelopeSimple className="absolute top-3.5 left-4 text-gray-400" />
+            </div>
+            <div className="relative">
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
+              />
+              <GameIconsPlainPadlock className="absolute top-3.5 left-4 text-gray-400" />
+            </div>
+            <button
+              type="submit"
+              className="bg-blue-500 rounded-full p-3 text-white text-base w-full flex items-center justify-center"
+            >
+              {loading && (
+                <LineMdLoadingTwotoneLoop className="animate-spin mr-2" />
+              )}
+              Login
+            </button>
 
-          <div className="flex gap-4 items-center justify-between text-neutral-400">
-            <Link href="" className="hover:text-neutral-600">
-              Forgot Password
-            </Link>
-            <Link href="/register" className="hover:text-neutral-600">
-              Sign Up
-            </Link>
+            <div className="flex gap-4 items-center justify-between text-neutral-400">
+              <Link href="" className="hover:text-neutral-600">
+                Forgot Password
+              </Link>
+              <Link href="/register" className="hover:text-neutral-600">
+                Sign Up
+              </Link>
+            </div>
           </div>
         </form>
       </div>

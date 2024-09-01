@@ -9,12 +9,22 @@ const useAuthStore = create(
       setUser: (user: IUser) => set({ user }),
       logout: () => {
         set({ user: null });
-        localStorage.removeItem("auth-storage"); // Hapus data dari localStorage
       },
     }),
     {
       name: "auth-storage", // Nama key di localStorage
-      getStorage: () => localStorage, // Menggunakan localStorage untuk persistensi
+      storage: {
+        getItem: (name) => {
+          const item = localStorage.getItem(name);
+          return item ? JSON.parse(item) : null;
+        },
+        setItem: (name, value) => {
+          localStorage.setItem(name, JSON.stringify(value));
+        },
+        removeItem: (name) => {
+          localStorage.removeItem(name);
+        },
+      },
     }
   )
 );

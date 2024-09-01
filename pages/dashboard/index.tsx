@@ -38,16 +38,18 @@ const Dashboard = () => {
   }, [isClient, user, router]);
 
   return (
-    <div className="bg-[#f2f2f2] min-h-screen">
-      <Navbar />
-      <div className="px-20 py-10">
-        <Add />
+    <>
+      <div className="bg-[#f2f2f2] min-h-screen">
+        <Navbar />
+        <div className="px-20 py-10">
+          <Add />
 
-        <div className="container mx-auto py-10">
-          <DataTable columns={columns} data={data} />
+          <div className="container mx-auto py-10">
+            <DataTable columns={columns} data={data} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

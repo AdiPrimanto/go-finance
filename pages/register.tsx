@@ -66,58 +66,57 @@ const Register = () => {
       </div>
 
       <div className="col-span-12 md:col-span-4 bg-white flex justify-center items-center">
-        <form
-          onSubmit={handleRegister}
-          className="flex gap-4 flex-col w-full p-10 md:p-20"
-        >
-          <div className="mb-8">
-            <h1 className="text-black text-4xl font-bold">Hello!</h1>
-            <h3 className="text-black text-2xl">Sign Up to Get Started</h3>
-          </div>
-          <div className="relative">
-            <input
-              type="fullname"
-              placeholder="Full Name"
-              value={fullname}
-              onChange={(e) => setFullName(e.target.value)}
-              className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
-            />
-            <IonMdPerson className="absolute top-3.5 left-4 text-gray-400" />
-          </div>
-          <div className="relative">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
-            />
-            <PhEnvelopeSimple className="absolute top-3.5 left-4 text-gray-400" />
-          </div>
-          <div className="relative">
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
-            />
-            <GameIconsPlainPadlock className="absolute top-3.5 left-4 text-gray-400" />
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-500 rounded-full p-3 text-white text-base w-full flex items-center justify-center"
-          >
-            {loading && (
-              <LineMdLoadingTwotoneLoop className="animate-spin mr-2" />
-            )}
-            Register
-          </button>
+        <form onSubmit={handleRegister}>
+          <div className="flex gap-4 flex-col w-full p-10 md:p-20">
+            <div className="mb-8">
+              <h1 className="text-black text-4xl font-bold">Hello!</h1>
+              <h3 className="text-black text-2xl">Sign Up to Get Started</h3>
+            </div>
+            <div className="relative">
+              <input
+                type="fullname"
+                placeholder="Full Name"
+                value={fullname}
+                onChange={(e) => setFullName(e.target.value)}
+                className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
+              />
+              <IonMdPerson className="absolute top-3.5 left-4 text-gray-400" />
+            </div>
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
+              />
+              <PhEnvelopeSimple className="absolute top-3.5 left-4 text-gray-400" />
+            </div>
+            <div className="relative">
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full p-3 pl-12 rounded-full border-2 border-gray-300 outline-none ring-0 ring-gray-300"
+              />
+              <GameIconsPlainPadlock className="absolute top-3.5 left-4 text-gray-400" />
+            </div>
+            <button
+              type="submit"
+              className="bg-blue-500 rounded-full p-3 text-white text-base w-full flex items-center justify-center"
+            >
+              {loading && (
+                <LineMdLoadingTwotoneLoop className="animate-spin mr-2" />
+              )}
+              Register
+            </button>
 
-          <div className="flex gap-4 items-center justify-center text-neutral-400">
-            <Link href="/login" className="hover:text-neutral-600">
-              Login
-            </Link>
+            <div className="flex gap-4 items-center justify-center text-neutral-400">
+              <Link href="/login" className="hover:text-neutral-600">
+                Login
+              </Link>
+            </div>
           </div>
         </form>
       </div>
